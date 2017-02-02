@@ -27,20 +27,66 @@
 	</div>
 
 	<div class="touch-menu-la color" id="menu">
-		<div class="menu">Menu</div>
+		<div class="menu">
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi voluptatibus, eos similique sint! Minima similique reiciendis magnam voluptas unde reprehenderit nihil eaque officia repudiandae vero ex libero, maiores corporis quia repellat sit quaerat natus omnis. Dicta, sapiente id molestias adipisci, eaque iure voluptatibus cum molestiae nemo aliquid quae tenetur. Blanditiis molestias repellendus magnam doloremque rerum minus non nulla, fugit quaerat quia. Quidem ratione culpa dolor sit qui voluptatum error expedita, inventore quod quasi et ipsum sapiente eos quas, nulla magnam dolore ut aliquam! Autem in officiis voluptatem atque, sunt odit praesentium, esse perspiciatis tenetur ad error sit totam iure, odio numquam inventore! Dolorum ad vel quaerat, quia cum quae velit. Officia culpa eaque repellat labore explicabo, fugiat ipsam odio natus, debitis, optio perferendis non, cupiditate rerum ex? Velit vitae assumenda libero nesciunt quia enim vero iusto magni tempore quaerat quos dolore placeat, fugiat qui quam nemo sunt minus ratione illum facilis itaque consequuntur ex, voluptates est. Ea nostrum placeat, quo reprehenderit modi accusantium magnam hic repudiandae molestias debitis cupiditate non similique tempore suscipit laboriosam perferendis quas delectus quasi consequatur maiores sequi id nemo iure omnis? Doloremque nihil corporis quibusdam cumque rerum, accusamus eveniet, laborum ipsa ut ad! Sapiente, numquam, accusamus.
+		</div>
 	</div>
 
 	<script src="js/hammer.min.js"></script>
 	<script src="js/touch-menu-la.min.js"></script>
+	<script src="js/jquery-3.1.1.min.js"></script>
 	<script>
-	var TouchMenu = TouchMenuLA({
-		target: document.getElementById('menu'),
-		width: 250
-	});
-
-	document.getElementById('menu-open').addEventListener('click', function(){
-		TouchMenu.toggle();
-	});
+		const proc = 85;
+		const opacity = 0.7;
+		var width, width_w = window.innerWidth;
+		var width_h = window.innerHeight;
+		if (width_w > width_h)
+			width = proc * width_h / 100;
+		else
+			width = proc * width_w / 100;
+		var TouchMenu = TouchMenuLA({
+			target: document.getElementById('menu'),
+			width: width,
+			maxMaskOpacity: opacity,
+			onOpen: function(){
+				//запрещаем скролить окно
+				$('body').css({'overflow' : 'hidden'});
+				$('.touch-menu-la').removeClass('tmla-menu closed');
+				//animation visible ukz
+			},
+			onClose: function(){
+				//скролить окно
+				$('body').css({'overflow-y' : 'scroll'});
+				$('.touch-menu-la').addClass('tmla-menu closed');
+				//animation visible ukz
+			}
+		});
+		document.getElementById('menu-open').addEventListener('click', function(){
+			TouchMenu.toggle();
+		});
+		$('.touch-menu-la').bind('touchmove', function(e){
+			var _width = 'translate3d(' + width + 'px, 0px, 0px)';
+			$(this).css({'transform' : _width});
+			$('.touch-menu-la').addClass('tmla-menu opened');
+			$('.tmla-mask').css({'opacity' : opacity});
+			//console.log('touch');
+		});
+		$('.color .menu').scroll(function(){
+			var _width = 'translate3d(' + width + 'px, 0px, 0px)';
+			$('.touch-menu-la').css({'transform' : _width});
+			//$('.touch-menu-la').addClass('tmla-menu opened');
+			$('.tmla-mask').css({'opacity' : opacity});
+			//console.log('scroll');
+		});
+		window.addEventListener("resize", function(){
+			//orientation
+			var width, width_w = window.innerWidth;
+			var width_h = window.innerHeight;
+			if (width_w > width_h)
+				width = proc * width_h / 100;
+			else
+				width = proc * width_w / 100;
+		}, false);
 	</script>
 </body>
 </html>

@@ -33,7 +33,6 @@ header .button{
 	text-align: center;
 	padding: 2px;
 	outline: none;
-	/*cursor: pointer;*/
 }
 header .button span:first-child{margin-top: 0px}
 header .button span{
@@ -61,7 +60,6 @@ header .search{
 	padding: 2px;
     margin-right: 10px;
     outline: none;
-	/*cursor: pointer;*/
 }
 header .search span:first-child{margin-top: 0px}
 header .search span{
@@ -73,10 +71,19 @@ header .search span{
 	border-radius: 50%;
 }
 /*menu*/
-.color{background-color: rgba(63, 81, 181, 0.8)}
+.color{
+	background-color: #364146;
+}
 .color .menu{
-	padding: 15px;
+	padding: 10px;
+	/*background-color: rgb(255, 255, 255);*/
 	color: #fff;
+	position: relative;
+	top: 0px;
+	left: 0px;
+	right: 0px;
+	height: 95%;
+	overflow-y: scroll;
 }
 /*content*/
 .content{
