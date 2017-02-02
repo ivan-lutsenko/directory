@@ -67,14 +67,14 @@
 		$('.touch-menu-la').bind('touchmove', function(e){
 			var _width = 'translate3d(' + width + 'px, 0px, 0px)';
 			$(this).css({'transform' : _width});
-			$('.touch-menu-la').addClass('tmla-menu opened');
+			//$('.touch-menu-la').addClass('tmla-menu opened');
 			$('.tmla-mask').css({'opacity' : opacity});
 			//console.log('touch');
 		});
 		$('.color .menu').scroll(function(){
 			var _width = 'translate3d(' + width + 'px, 0px, 0px)';
 			$('.touch-menu-la').css({'transform' : _width});
-			//$('.touch-menu-la').addClass('tmla-menu opened');
+			$('.touch-menu-la').addClass('tmla-menu opened');
 			$('.tmla-mask').css({'opacity' : opacity});
 			//console.log('scroll');
 		});
