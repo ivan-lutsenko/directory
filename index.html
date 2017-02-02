@@ -3,6 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="initial-scale=1">
+	<!-- <meta name="viewport" content="user-scalable=no"> -->
 	<title>Справочник</title>
 	<link rel="stylesheet" href="css/touch-menu-la.css">
 	<link rel="stylesheet" href="css/style.css">
@@ -44,6 +45,7 @@
 			width = proc * width_h / 100;
 		else
 			width = proc * width_w / 100;
+		$('.content').css({'height' : width_h - 40 - 20});
 		var TouchMenu = TouchMenuLA({
 			target: document.getElementById('menu'),
 			width: width,
@@ -86,6 +88,7 @@
 				width = proc * width_h / 100;
 			else
 				width = proc * width_w / 100;
+			$('.content').css({'height' : width_h - 40 - 20});
 		}, false);
 	</script>
 </body>
