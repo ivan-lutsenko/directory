@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
@@ -29,23 +29,25 @@
 
 	<div class="touch-menu-la color" id="menu">
 		<div class="menu">
-			Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi voluptatibus, eos similique sint! Minima similique reiciendis magnam voluptas unde reprehenderit nihil eaque officia repudiandae vero ex libero, maiores corporis quia repellat sit quaerat natus omnis. Dicta, sapiente id molestias adipisci, eaque iure voluptatibus cum molestiae nemo aliquid quae tenetur. Blanditiis molestias repellendus magnam doloremque rerum minus non nulla, fugit quaerat quia. Quidem ratione culpa dolor sit qui voluptatum error expedita, inventore quod quasi et ipsum sapiente eos quas, nulla magnam dolore ut aliquam! Autem in officiis voluptatem atque, sunt odit praesentium, esse perspiciatis tenetur ad error sit totam iure, odio numquam inventore! Dolorum ad vel quaerat, quia cum quae velit. Officia culpa eaque repellat labore explicabo, fugiat ipsam odio natus, debitis, optio perferendis non, cupiditate rerum ex? Velit vitae assumenda libero nesciunt quia enim vero iusto magni tempore quaerat quos dolore placeat, fugiat qui quam nemo sunt minus ratione illum facilis itaque consequuntur ex, voluptates est. Ea nostrum placeat, quo reprehenderit modi accusantium magnam hic repudiandae molestias debitis cupiditate non similique tempore suscipit laboriosam perferendis quas delectus quasi consequatur maiores sequi id nemo iure omnis? Doloremque nihil corporis quibusdam cumque rerum, accusamus eveniet, laborum ipsa ut ad! Sapiente, numquam, accusamus.
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem vitae fugiat veritatis sit non, hic at tempore natus aut perspiciatis deleniti similique officia sed veniam ullam ducimus ipsam quod. Praesentium neque totam vitae dolorum nulla non, eveniet provident ratione tempora pariatur, quod, ipsum sint. Perferendis vero itaque saepe quisquam modi culpa repellat facilis, fuga sed autem explicabo sunt quod iste soluta cum ipsum sequi eaque voluptates nihil impedit nobis sint velit. Dicta voluptatum, et beatae rem ea cum rerum nemo repellat nesciunt animi quaerat adipisci aut minima nobis quam quis, reiciendis quibusdam facilis temporibus atque. Soluta beatae modi molestiae earum aliquam aspernatur itaque doloribus tempore, perspiciatis nulla quibusdam rem obcaecati dolores laborum cupiditate, at, harum recusandae qui? Nesciunt excepturi eligendi, eveniet, mollitia, quos architecto porro quo possimus nisi asperiores voluptate dolor nostrum error corrupti nihil. Ipsum sit esse recusandae nesciunt illo beatae quas, alias blanditiis expedita ipsam voluptas nostrum amet veritatis non labore commodi architecto vero quos fugit quasi assumenda. Quae optio, dicta praesentium natus nihil earum esse porro expedita. Sed temporibus excepturi ab rem nulla culpa labore placeat, omnis dolore corporis ratione eius fugit commodi pariatur corrupti ullam ex nesciunt repellat, recusandae vel. Vel aliquid nostrum exercitationem harum repellat aperiam quia, tenetur quibusdam ad magnam adipisci at hic velit possimus veniam? Reiciendis blanditiis, error? Est in error similique praesentium iste dolore quasi ab repellendus molestiae expedita! Cumque sapiente quis tenetur amet quas ducimus eveniet aliquam ea soluta, vero officiis quasi laudantium, sequi, iure similique voluptas nihil magni recusandae molestias minima eius ipsum, repudiandae odio ipsa. Tempora tenetur fugiat eum repudiandae illo rerum? Accusamus deserunt amet doloremque ab itaque recusandae adipisci doloribus illum sed ducimus repellat, nisi, asperiores similique ipsa optio ipsum vitae nam fuga perferendis. Soluta earum possimus quia placeat libero blanditiis iure natus quasi, cumque debitis impedit iusto ipsam voluptatibus mollitia id facilis quos, minima, temporibus rerum tempora aliquid. Sequi at similique officiis aspernatur voluptas id, doloremque odio delectus doloribus. Totam fuga corporis officia quia veritatis similique iste ipsam consequuntur! Magni possimus, delectus deleniti dolore nesciunt nemo, dolores corrupti qui similique fuga id at repellat! Similique, eveniet, unde! Voluptate iste ex quas maiores, atque aspernatur nesciunt iusto soluta impedit cumque eos excepturi et sed expedita reprehenderit possimus minima qui similique! Facilis aperiam praesentium et, voluptas, velit possimus! Inventore error rerum labore amet autem. Odit est, ea ad! Nemo delectus exercitationem sunt officiis itaque sapiente atque, consectetur tempora nam quibusdam impedit hic distinctio ipsam eius fugit deserunt esse adipisci enim tempore repellendus neque alias a incidunt at voluptatibus! Inventore eaque odio, provident tempore eligendi, deleniti officiis quae a nemo quaerat sint ex ipsa labore enim sit minima. Iure, aperiam sed totam cum corporis maiores sint enim ea, quaerat blanditiis ut! Iste, ratione, possimus. Nulla dignissimos repellat aliquid harum delectus. Est, amet ea eaque! Animi nihil enim consectetur distinctio sapiente possimus, repudiandae quisquam voluptatibus veritatis eius illum placeat accusantium accusamus velit nisi repellat nemo vero quas harum molestiae ducimus debitis, pariatur modi. Aspernatur odit minima tenetur dolor numquam quo, sunt!
 		</div>
 	</div>
 
+	<script src="js/jquery-3.1.1.min.js"></script>
 	<script src="js/hammer.min.js"></script>
 	<script src="js/touch-menu-la.min.js"></script>
-	<script src="js/jquery-3.1.1.min.js"></script>
+	<script src="js/jquery.touchSwipe.min.js"></script>
 	<script>
 		const proc = 85;
 		const opacity = 0.7;
+		var pos = 0;
 		var width, width_w = window.innerWidth;
 		var width_h = window.innerHeight;
 		if (width_w > width_h)
 			width = proc * width_h / 100;
 		else
 			width = proc * width_w / 100;
-		$('.content').css({'height' : width_h - 40 - 20});
+		$('.content').css({'height' : width_h - 40 - 25});
 		var TouchMenu = TouchMenuLA({
 			target: document.getElementById('menu'),
 			width: width,
@@ -53,42 +55,91 @@
 			onOpen: function(){
 				//запрещаем скролить окно
 				$('body').css({'overflow' : 'hidden'});
-				$('.touch-menu-la').removeClass('tmla-menu closed');
 				//animation visible ukz
 			},
 			onClose: function(){
 				//скролить окно
 				$('body').css({'overflow-y' : 'scroll'});
-				$('.touch-menu-la').addClass('tmla-menu closed');
 				//animation visible ukz
 			}
 		});
 		document.getElementById('menu-open').addEventListener('click', function(){
 			TouchMenu.toggle();
 		});
-		$('.touch-menu-la').bind('touchmove', function(e){
-			var _width = 'translate3d(' + width + 'px, 0px, 0px)';
-			$(this).css({'transform' : _width});
-			//$('.touch-menu-la').addClass('tmla-menu opened');
-			$('.tmla-mask').css({'opacity' : opacity});
-			//console.log('touch');
-		});
-		$('.color .menu').scroll(function(){
-			var _width = 'translate3d(' + width + 'px, 0px, 0px)';
-			$('.touch-menu-la').css({'transform' : _width});
-			$('.touch-menu-la').addClass('tmla-menu opened');
-			$('.tmla-mask').css({'opacity' : opacity});
-			//console.log('scroll');
+		$.fn.touchScrolling = function(){
+    		var startPos = 0;
+        	self = $(this);
+        	self.bind('touchstart', function(e) {
+        		startPos = self.scrollTop() + e.touches[0].pageY;
+        		e.preventDefault();
+        	});
+		    self.bind('touchmove', function(e) {
+		        self.scrollTop(startPos - e.touches[0].pageY);
+		        e.preventDefault();
+		    });
+		};
+		$('.color .menu').touchScrolling();
+		$('.touch-menu-la').swipe({
+			swipeStatus:function(event, phase, direction, distance, duration, fingers, fingerData, currentDirection){
+				if (currentDirection == 'up' || currentDirection == 'down'){
+					//console.log('scroll');
+					if ($(this).css('transform') != 'matrix(1, 0, 0, 1, 272, 0)')
+					{
+						var startPos = 0;
+			        	self = $('.color .menu');
+						self.unbind();
+			        	self.bind('touchstart', function(e) {
+			        		startPos = self.scrollTop() + e.touches[0].pageY;
+			        		e.preventDefault();
+			        	});
+					    self.bind('touchmove', function(e) {
+					        //self.scrollTop(startPos - e.touches[0].pageY);
+					        self.scrollTop(pos);
+					        e.preventDefault();
+					    });
+					    self.bind('touchend', function(e) {
+					        self.scrollTop(pos);
+					        self.unbind();
+					        self.bind('touchstart', function(e) {
+				        		startPos = self.scrollTop() + e.touches[0].pageY;
+				        		e.preventDefault();
+				        	});
+						    self.bind('touchmove', function(e) {
+						        self.scrollTop(startPos - e.touches[0].pageY);
+						        e.preventDefault();
+						    });
+					        e.preventDefault();
+					    });
+					    self.bind('touchcancel', function(e) {
+					        self.scrollTop(pos);
+					        self.unbind();
+					        self.bind('touchstart', function(e) {
+				        		startPos = self.scrollTop() + e.touches[0].pageY;
+				        		e.preventDefault();
+				        	});
+						    self.bind('touchmove', function(e) {
+						        self.scrollTop(startPos - e.touches[0].pageY);
+						        e.preventDefault();
+						    });
+					        e.preventDefault();
+					    });
+					}
+					else
+						pos = $('.color .menu').scrollTop();
+					
+				}
+			},
+			threshold:0
 		});
 		window.addEventListener("resize", function(){
-			//orientation
-			var width, width_w = window.innerWidth;
-			var width_h = window.innerHeight;
+			//orientation landscape and portrait
+			width, width_w = window.innerWidth;
+			width_h = window.innerHeight;
 			if (width_w > width_h)
 				width = proc * width_h / 100;
 			else
 				width = proc * width_w / 100;
-			$('.content').css({'height' : width_h - 40 - 20});
+			$('.content').css({'height' : width_h - 40 - 25});
 		}, false);
 	</script>
 </body>
