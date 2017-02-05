@@ -83,7 +83,26 @@
 			swipeStatus:function(event, phase, direction, distance, duration, fingers, fingerData, currentDirection){
 				if (currentDirection == 'up' || currentDirection == 'down'){
 					//console.log('scroll');
-					if ($(this).css('transform') != 'matrix(1, 0, 0, 1, 272, 0)')
+					var s = '', str = $(this).css('transform');
+					for(var i = str.length - 1; i >= 0; i--){
+						if (str[i] == ',')
+							{
+								for(var j = i - 1; j >= 0; j--){
+									if (str[j] != ',')
+										s += str[j];
+									else
+										break;
+								}
+								var _s = '';
+								for(var k = s.length - 1; k >= 0; k--){
+									_s += s[k];
+								}
+								s = _s;
+								break;
+							}
+					}
+					_width_scroll = window.innerWidth * 60 /100;
+					if (s < _width_scroll)
 					{
 						var startPos = 0;
 			        	self = $('.color .menu');
@@ -126,7 +145,6 @@
 					}
 					else
 						pos = $('.color .menu').scrollTop();
-					
 				}
 			},
 			threshold:0
