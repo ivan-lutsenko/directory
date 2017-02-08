@@ -17,6 +17,15 @@ html, body{
 	display: table;
 }
 .clearfix:after{clear: both}
+/*block*/
+.block-1{
+	position: relative;
+	top: 0px;
+	bottom: 0px;
+	left: 0px;
+	right: 0px;
+	/*background-color: rgba(0, 0, 0, 0.7);*/
+}
 /*header*/
 header{
 	position: fixed;
@@ -83,12 +92,12 @@ header .search span{
 	top: 0px;
 	left: 0px;
 	right: 0px;
-	height: 95%;
+	height: 94%;
 	overflow-y: scroll;
 }
 /*content*/
 .content{
-	padding: 1em;
-	margin-top: 40px;
+	padding: 5px 15px;
+	margin-top: 50px;
 	overflow-y: scroll;
 }
