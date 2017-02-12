@@ -86,18 +86,27 @@ header .search span{
 }
 .color .menu{
 	color: #fff;
-	position: relative;
+	position: absolute;
 	top: 0px;
 	left: 0px;
-	width: 100%;
+	right: 0px;
 	height: 100%;
 	overflow-y: scroll;
+}
+.menu h4{
+    text-align:center;
+    margin:0;
+    padding:0;
+    padding-top:15px;
+    font-size:20px;
 }
 .color .menu nav ul{
 	margin: 0px;
 	padding: 0px;
 }
 .color .menu nav ul li{
+    margin: 0px;
+	padding: 0px;
 	list-style-type: none;
 }
 .color .menu nav ul li a{
@@ -108,11 +117,148 @@ header .search span{
 }
 .color .menu nav ul .active, .color .menu nav ul li a:hover{
 	background-color: #3F51B5;
-	border-right: 4px solid #000;
+	
 }
 /*content*/
 .content{
 	padding: 5px 15px;
 	margin-top: 50px;
 	overflow-y: scroll;
+}
+/*animation button*/
+.circle.waves-effect{
+	display: block;
+	width: 38px;
+	height: 38px;
+	border-radius: 50%;
+	background-color: rgba(244, 67, 54, 0.7);
+}
+.circle .block{
+	position: absolute;
+	top: 0px;
+	bottom: 0px;
+	left: 0px;
+	right: 0px;
+	-webkit-transition: transform 0.2s ease;
+	-moz-transition: transform 0.2s ease;
+	-ms-transition: transform 0.2s ease;
+	-o-transition: transform 0.2s ease;
+	transition: transform 0.2s ease;
+}
+.circle .block.animation{
+	-webkit-transform: rotate(-180deg);
+	-moz-transform: rotate(-180deg);
+	-ms-transform: rotate(-180deg);
+	-o-transform: rotate(-180deg);
+	transform: rotate(-180deg);
+}
+.circle .block .top{
+	position: absolute;
+	top: 11px;
+	left: 9px;
+	right: 9px;
+	height: 2px;
+	border-radius: 1px;
+	background-color: #fff;
+}
+.circle .block .middle{
+	position: absolute;
+	top: 47%;
+	left: 9px;
+	right: 9px;
+	height: 2px;
+	border-radius: 1px;
+	background-color: #fff;
+}
+.circle .block .bottom{
+	position: absolute;
+	bottom: 11px;
+	left: 9px;
+	right: 9px;
+	height: 2px;
+	border-radius: 1px;
+	background-color: #fff;
+}
+/*animation arrow*/
+.circle .block.animation{
+	-webkit-transform: rotate(-180deg);
+	-moz-transform: rotate(-180deg);
+	-ms-transform: rotate(-180deg);
+	-o-transform: rotate(-180deg);
+	transform: rotate(-180deg);
+}
+.circle .block.animation .bottom{
+	left: 18px;
+	-webkit-transform: rotate(-30deg);
+	-moz-transform: rotate(-30deg);
+	-ms-transform: rotate(-30deg);
+	-o-transform: rotate(-30deg);
+	transform: rotate(-30deg);
+	bottom: 15px
+}
+.circle .block.animation .top{
+	left: 18px;
+	-webkit-transform: rotate(30deg);
+	-moz-transform: rotate(30deg);
+	-ms-transform: rotate(30deg);
+	-o-transform: rotate(30deg);
+	transform: rotate(30deg);
+	top: 15px;
+}
+/*animation click*/
+/*bug firefox*/
+.waves-effect .waves-ripple{
+	z-index: -1;
+}
+.waves-effect{
+	position: relative;
+	cursor: pointer;
+	display: inline-block;
+	overflow: hidden;
+	-webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+    vertical-align: middle;
+    z-index: 1;
+    transition: .3s ease-out;
+}
+.waves-effect .waves-ripple{
+	position: absolute;
+	border-radius: 50%;
+	width: 20px;
+	height: 20px;
+	margin-top: -10px;
+	margin-left: -10px;
+	opacity: 0;
+	background: rgba(0, 0, 0, 0.2);
+	transition: all 0.7s ease-out;
+	transition-property: opacity, -webkit-transform;
+	transition-property: transform, opacity;
+	transition-property: transform, opacity, -webkit-transform;
+	-webkit-transform: scale(0);
+    transform: scale(0);
+    pointer-events: none;
+}
+.waves-effect.waves-light .waves-ripple{
+	background-color: rgba(255, 255, 255, 0.45);
+}
+.waves-effect.waves-red .waves-ripple{
+	background-color: rgba(244, 67, 54, 0.7);
+}
+.waves-effect.waves-yellow .waves-ripple{
+	background-color: rgba(255, 235, 59, 0.7);
+}
+.waves-effect.waves-orange .waves-ripple{
+	background-color: rgba(255, 152, 0, 0.7);
+}
+.waves-effect.waves-purple .waves-ripple{
+	background-color: rgba(156, 39, 176, 0.7);
+}
+.waves-effect.waves-green .waves-ripple{
+	background-color: rgba(76, 175, 80, 0.7);
+}
+.waves-effect.waves-teal .waves-ripple{
+	background-color: rgba(0, 150, 136, 0.7);
 }
