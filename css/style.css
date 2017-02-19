@@ -24,7 +24,23 @@ html, body{
 	bottom: 0px;
 	left: 0px;
 	right: 0px;
+	/*z-index: 10;*/
 	/*background-color: rgba(0, 0, 0, 0.7);*/
+}
+.block-2, .block-3{
+	position: fixed;
+	top: 0px;
+	bottom: 0px;
+	left: 0px;
+	right: 0px;
+}
+.block-2{
+	z-index: 9;
+	background-color: #a22e2e;
+}
+.block-3{
+	z-index: 8;
+	background-color: #E02176;
 }
 /*header*/
 header{
@@ -34,25 +50,94 @@ header{
 	right: 0px;
 	padding: 5px 5px;
 	height: 40px;
+	z-index: 10;
 	background-color: #3F51B5;
 }
-header .button{
-	margin-left: 0.8em;
-	margin-top: 0.75em;
+/*animation button*/
+header .circle.waves-effect{
 	float: left; 
 	text-align: center;
-	padding: 2px;
-	outline: none;
-}
-header .button span:first-child{margin-top: 0px}
-header .button span{
+
 	display: block;
-	background-color: #fff;
-	padding: 1px;
-	margin-top: 4px;
-	width: 18px;
-	border-radius: 10px;
+	width: 38px;
+	height: 38px;
+	border-radius: 50%;
+	margin-top: 2px;
+	margin-left: 2px;
 }
+header .circle .block{
+	position: absolute;
+	top: 0px;
+	bottom: 0px;
+	left: 0px;
+	right: 0px;
+	-webkit-transition: transform 0.2s ease;
+	-moz-transition: transform 0.2s ease;
+	-ms-transition: transform 0.2s ease;
+	-o-transition: transform 0.2s ease;
+	transition: transform 0.2s ease;
+}
+header .circle .block.animation{
+	-webkit-transform: rotate(-180deg);
+	-moz-transform: rotate(-180deg);
+	-ms-transform: rotate(-180deg);
+	-o-transform: rotate(-180deg);
+	transform: rotate(-180deg);
+}
+header .circle .block .top{
+	position: absolute;
+	top: 11px;
+	left: 9px;
+	right: 9px;
+	height: 2px;
+	border-radius: 1px;
+	background-color: #fff;
+}
+header .circle .block .middle{
+	position: absolute;
+	top: 47%;
+	left: 9px;
+	right: 9px;
+	height: 2px;
+	border-radius: 1px;
+	background-color: #fff;
+}
+header .circle .block .bottom{
+	position: absolute;
+	bottom: 11px;
+	left: 9px;
+	right: 9px;
+	height: 2px;
+	border-radius: 1px;
+	background-color: #fff;
+}
+/*animation arrow*/
+header .circle .block.animation{
+	-webkit-transform: rotate(-180deg);
+	-moz-transform: rotate(-180deg);
+	-ms-transform: rotate(-180deg);
+	-o-transform: rotate(-180deg);
+	transform: rotate(-180deg);
+}
+header .circle .block.animation .bottom{
+	left: 18px;
+	-webkit-transform: rotate(-30deg);
+	-moz-transform: rotate(-30deg);
+	-ms-transform: rotate(-30deg);
+	-o-transform: rotate(-30deg);
+	transform: rotate(-30deg);
+	bottom: 15px
+}
+header .circle .block.animation .top{
+	left: 18px;
+	-webkit-transform: rotate(30deg);
+	-moz-transform: rotate(30deg);
+	-ms-transform: rotate(30deg);
+	-o-transform: rotate(30deg);
+	transform: rotate(30deg);
+	top: 15px;
+}
+/**/
 header .name{
 	display: inline-block; 
 	width: 80%; 
@@ -121,89 +206,13 @@ header .search span{
 }
 /*content*/
 .content{
-	padding: 5px 15px;
-	margin-top: 50px;
-	overflow-y: scroll;
-}
-/*animation button*/
-.circle.waves-effect{
-	display: block;
-	width: 38px;
-	height: 38px;
-	border-radius: 50%;
-	background-color: rgba(244, 67, 54, 0.7);
-}
-.circle .block{
-	position: absolute;
-	top: 0px;
+	position: fixed;
+	top: 55px;
 	bottom: 0px;
-	left: 0px;
+	left: 10px;
 	right: 0px;
-	-webkit-transition: transform 0.2s ease;
-	-moz-transition: transform 0.2s ease;
-	-ms-transition: transform 0.2s ease;
-	-o-transition: transform 0.2s ease;
-	transition: transform 0.2s ease;
-}
-.circle .block.animation{
-	-webkit-transform: rotate(-180deg);
-	-moz-transform: rotate(-180deg);
-	-ms-transform: rotate(-180deg);
-	-o-transform: rotate(-180deg);
-	transform: rotate(-180deg);
-}
-.circle .block .top{
-	position: absolute;
-	top: 11px;
-	left: 9px;
-	right: 9px;
-	height: 2px;
-	border-radius: 1px;
-	background-color: #fff;
-}
-.circle .block .middle{
-	position: absolute;
-	top: 47%;
-	left: 9px;
-	right: 9px;
-	height: 2px;
-	border-radius: 1px;
-	background-color: #fff;
-}
-.circle .block .bottom{
-	position: absolute;
-	bottom: 11px;
-	left: 9px;
-	right: 9px;
-	height: 2px;
-	border-radius: 1px;
-	background-color: #fff;
-}
-/*animation arrow*/
-.circle .block.animation{
-	-webkit-transform: rotate(-180deg);
-	-moz-transform: rotate(-180deg);
-	-ms-transform: rotate(-180deg);
-	-o-transform: rotate(-180deg);
-	transform: rotate(-180deg);
-}
-.circle .block.animation .bottom{
-	left: 18px;
-	-webkit-transform: rotate(-30deg);
-	-moz-transform: rotate(-30deg);
-	-ms-transform: rotate(-30deg);
-	-o-transform: rotate(-30deg);
-	transform: rotate(-30deg);
-	bottom: 15px
-}
-.circle .block.animation .top{
-	left: 18px;
-	-webkit-transform: rotate(30deg);
-	-moz-transform: rotate(30deg);
-	-ms-transform: rotate(30deg);
-	-o-transform: rotate(30deg);
-	transform: rotate(30deg);
-	top: 15px;
+	height: 100%;
+	overflow-y: scroll;
 }
 /*animation click*/
 /*bug firefox*/
