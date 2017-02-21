@@ -152,7 +152,6 @@ header .search{
 	text-align: right;
 	padding: 2px;
 	margin-top: 0.6em;
-	padding: 2px;
     margin-right: 10px;
     outline: none;
 }
@@ -178,13 +177,6 @@ header .search span{
 	height: 100%;
 	overflow-y: scroll;
 }
-.menu h4{
-    text-align:center;
-    margin:0;
-    padding:0;
-    padding-top:15px;
-    font-size:20px;
-}
 .color .menu nav ul{
 	margin: 0px;
 	padding: 0px;
@@ -202,17 +194,19 @@ header .search span{
 }
 .color .menu nav ul .active, .color .menu nav ul li a:hover{
 	background-color: #3F51B5;
-	
 }
 /*content*/
 .content{
 	position: fixed;
-	top: 55px;
+	top: 50px;
 	bottom: 0px;
-	left: 10px;
+	left: 0px;
 	right: 0px;
-	height: 100%;
+	background-color: #fff;
 	overflow-y: scroll;
+}
+.content .text{
+	padding: 10px 15px;
 }
 /*animation click*/
 /*bug firefox*/
